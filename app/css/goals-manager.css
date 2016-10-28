@@ -52,10 +52,12 @@ h2 {
 .navbar li {
   font-weight: bold;
 }
+/*
 .navbar li a {
   padding-top: 8px;
   padding-bottom: 5px;
 }
+*/
 .main-container {
   min-height: 670px;
   z-index: 0;
