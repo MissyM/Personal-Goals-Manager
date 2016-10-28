@@ -44,7 +44,7 @@ h2 {
   margin-top: 8px;
 }
 .navbar {
-  min-height: 50px;
+  /*min-height: 50px;*/
 }
 .navbar .form-control {
   height: 32px;
@@ -52,12 +52,10 @@ h2 {
 .navbar li {
   font-weight: bold;
 }
-/*
 .navbar li a {
   padding-top: 8px;
   padding-bottom: 5px;
 }
-*/
 .main-container {
   min-height: 670px;
   z-index: 0;
