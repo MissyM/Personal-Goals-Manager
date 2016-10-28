@@ -67,7 +67,25 @@
             }
         };
 
+        var Goals = {
+            name: 'goals',
+            url: '/goals',
+            templateUrl: 'goals/goals.html?bust=' + (new Date().getTime()),
+            controller: 'GoalsCtrl',
+            controllerAs: 'vm',
+            resolve: {
+                deps: ['$ocLazyLoad', '$http','$state','dataservice', '$rootScope',function($ocLazyLoad, $http,$state,dataservice,$rootScope){
+                    authorizationCheck($state,$http,dataservice,$rootScope);
+                    return $ocLazyLoad.load([
+                        'goals/goalsController.ctrl.js'
+                    ], {serie: true});
+                }]
+            }
+        };
+
+
         $stateProvider.state(Dashboard.name,Dashboard);
+        $stateProvider.state(Goals.name,Goals);
         $stateProvider.state(LoginRegistration.name,LoginRegistration);
 
     }]);
