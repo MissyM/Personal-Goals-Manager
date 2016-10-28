@@ -57,8 +57,11 @@ h2 {
   font-weight: bold;
 }
 .navbar li a {
-  padding-top: 8px;
-  padding-bottom: 5px;
+  /*
+      padding-top: 8px;
+      padding-bottom: 5px;
+      */
+
 }
 .main-container {
   min-height: 670px;
