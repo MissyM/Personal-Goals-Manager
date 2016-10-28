@@ -13,10 +13,13 @@
                         <label for="id{{field.name}}" class="col-lg-3 control-label">{{field.label}}</label>
                         <div ng-switch="field.type" class="col-lg-9">
                             <div ng-switch-when="textarea" class="">
-                                <textarea ng-model="vm.goal[field.name]" class="form-control"></textarea>
+                                <textarea
+                                        ng-blur="vm.blurField( field )"
+                                        ng-model="vm.goal[field.name]" class="form-control"></textarea>
                                 <span class="help-text">{{field.hint}}</span>
                             </div>
                             <input
+                                    ng-blur="vm.blurField( field )"
                                     ng-switch-default=""
                                     ng-model="vm.goal[field.name]"
                                     type="{{field.type}}"
@@ -36,9 +39,12 @@
         <div class="col-lg-7">
             <h2>Manage Goals</h2>
             <ul class="list-group goals-list">
-                <li ng-repeat="goal in vm.goals" class="list-group-item">
+                <li ng-repeat="goal in vm.goals" class="list-group-item hover-show">
                     {{goal.name}}
                     <span class="description">{{goal.description}}</span>
+                    <a class="pull-right btn btn-xs btn-danger hover-shown" ng-click="vm.deleteGoal( goal )">
+                        <i class="fa fa-trash"></i>&nbsp;Delete Goal
+                    </a>
                 </li>
             </ul>
             <p ng-show="! vm.goals.length " class="no-goals">

@@ -19,6 +19,12 @@ h2 {
 .content-container {
   margin-bottom: 50px;
 }
+.hover-shown {
+  display: none;
+}
+.hover-show:hover .hover-shown {
+  display: block;
+}
 .navbar-brand {
   height: 30px;
   padding-top: 4px;
