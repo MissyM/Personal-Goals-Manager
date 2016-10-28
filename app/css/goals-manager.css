@@ -34,7 +34,8 @@ h2 {
   margin-top: 10px;
 }
 .navbar-nav li a {
-  line-height: 34px;
+  /*line-height: 34px;*/
+
 }
 .navbar-default {
   background-color: black;
@@ -46,34 +47,35 @@ h2 {
 .navbar {
   /*
   min-height: 50px;
-  li {
-    font-weight: bold;
-    a{
-      padding-top: 8px;
-      padding-bottom: 5px;
+  */
 
-    }
-  }
 }
-
+.navbar .form-control {
+  height: 32px;
+}
+.navbar li {
+  font-weight: bold;
+}
+.navbar li a {
+  padding-top: 8px;
+  padding-bottom: 5px;
+}
 .main-container {
-  section {
-    margin-top: 70px;
-  }
   min-height: 670px;
   z-index: 0;
-  .loader-backdrop {
-    z-index: 1;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(255,255,255,0.5) url(../img/box.gif) no-repeat fixed center;
-  }
 }
-
-
+.main-container section {
+  margin-top: 70px;
+}
+.main-container .loader-backdrop {
+  z-index: 1;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.5) url(../img/box.gif) no-repeat fixed center;
+}
 .footer {
   position: fixed;
   bottom: 0;
@@ -82,17 +84,13 @@ h2 {
   padding-left: 10px;
   width: 100%;
 }
-
 .tab-content h2 {
   margin-top: 10px;
 }
-
-.chosen-container, .chosen-choices {
+.chosen-container,
+.chosen-choices {
   /*height: 50px;*/
 
-}
-.navbar .form-control {
-  height: 32px;
 }
 .chosen-container-multi .chosen-choices li.search-field input[type="text"] {
   height: 35px;
