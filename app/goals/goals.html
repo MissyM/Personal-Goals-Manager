@@ -5,8 +5,42 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-4"></div>
-        <div class="col-lg-8">
+        <div class="col-lg-5">
+            <h2>Add a Goal</h2>
+            <form id="addGoalForm" class="form-horizontal">
+                <fieldset>
+                    <div ng-repeat="field in vm.fields" class="form-group">
+                        <label for="id{{field.name}}" class="col-lg-3 control-label">{{field.label}}</label>
+                        <div ng-switch="field.type" class="col-lg-9">
+                            <div ng-switch-when="textarea" class="">
+                                <textarea ng-model="vm.goal[field.name]" class="form-control"></textarea>
+                                <span class="help-text">{{field.hint}}</span>
+                            </div>
+                            <input
+                                    ng-switch-default=""
+                                    ng-model="vm.goal[field.name]"
+                                    type="{{field.type}}"
+                                   class="form-control" id="id{{field.name}}"
+                                   placeholder="{{field.placeholder}}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-2">
+                            <button type="reset" class="btn btn-default">Cancel</button>
+                            <button ng-click="vm.saveGoal()" type="submit" class="btn btn-primary">Save Goal</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="col-lg-7">
+            <h2>Manage Goals</h2>
+            <ul class="list-group goals-list">
+                <li ng-repeat="goal in vm.goals" class="list-group-item">
+                    {{goal.name}}
+                    <span class="description">{{goal.description}}</span>
+                </li>
+            </ul>
             <p ng-show="! vm.goals.length " class="no-goals">
                 <i class="fa fa-info"></i>&nbsp;
                 You don't have any Goals yet.  Use the form to add a Goal
